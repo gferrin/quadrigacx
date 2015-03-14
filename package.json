@@ -1,0 +1,28 @@
+{
+  "name": "quadrigacx",
+  "version": "0.0.1",
+  "description": "nodejs interface for QuadrigaCX bitcoin exchange",
+  "main": "lib/quadrigacx.js",
+  "scripts": {
+    "prepublish": "coffee --output lib --compile src"
+  },
+  "author": "Gabriel Ferrin",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.53.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gferrin/quadrigacx.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "quadrigacx",
+    "exchange"
+  ],
+  "bugs": {
+    "url": "https://github.com/gferrin/quadrigacx/issues"
+  },
+  "homepage": "https://github.com/gferrin/quadrigacx"
+}
