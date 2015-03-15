@@ -1,6 +1,6 @@
 {
   "name": "quadrigacx",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "nodejs interface for QuadrigaCX bitcoin exchange",
   "main": "lib/quadrigacx.js",
   "scripts": {

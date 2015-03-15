@@ -2,6 +2,7 @@
 
 request = require 'request'
 crypto = require 'crypto'
+qs = require 'querystring'
 
 module.exports = class Quadrigacx
 
@@ -30,14 +31,11 @@ module.exports = class Quadrigacx
 			cb = params
 		else 
 			try 
-				index = 0
-				for option, value of params
-					if index++ > 0
-						options['url'] += '&' + option + '=' + value
-					else
-						options['url'] += '/?' + option + '=' + value
+				options['url'] += '/?' +  qs.stringify(params)
 			catch err
 				return cb(err)
+
+		console.log options
 
 		request options, (err, response, body) ->	
 			try 
