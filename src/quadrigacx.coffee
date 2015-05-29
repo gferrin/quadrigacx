@@ -35,8 +35,6 @@ module.exports = class Quadrigacx
 			catch err
 				return cb(err)
 
-		console.log options
-
 		request options, (err, response, body) ->	
 			try 
 				if err || (response.statusCode != 200 && response.statusCode != 400)
