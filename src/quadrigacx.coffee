@@ -73,13 +73,13 @@ module.exports = class Quadrigacx
 				json: true
 
 			try 
-				console.log "CATCHING ERROR IN Quadrigacx PRIVATE"
 				request options, (err, response, body) ->
 					if err or (response.statusCode != 200 && response.statusCode != 400)
 						return cb new Error(err ? response.statusCode)
 					
 					cb(null, body)
 			catch err
+				console.log "CATCHING ERROR IN Quadrigacx PRIVATE"
 				return cb(err)
 		catch err
 			return cb(err)
