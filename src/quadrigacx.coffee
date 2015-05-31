@@ -35,14 +35,16 @@ module.exports = class Quadrigacx
 			catch err
 				return cb(err)
 
-		request options, (err, response, body) ->	
-			try 
+		
+		try 
+			request options, (err, response, body) ->	
 				if err || (response.statusCode != 200 && response.statusCode != 400)
 					return cb new Error(err ? response.statusCode)
 				
 				cb(null, body)
-			catch err
-				return cb(err)
+		catch err
+			console.log "CATCHING ERROR IN Quadrigacx PUBLIC"
+			return cb(err)
 
 	private_request: (path, params, cb) ->
 
@@ -70,12 +72,15 @@ module.exports = class Quadrigacx
 				timeout: 15000
 				json: true
 
-			request options, (err, response, body) ->
-				if err or (response.statusCode != 200 && response.statusCode != 400)
-					return cb new Error(err ? response.statusCode)
-				
-				cb(null, body)
-
+			try 
+				console.log "CATCHING ERROR IN Quadrigacx PRIVATE"
+				request options, (err, response, body) ->
+					if err or (response.statusCode != 200 && response.statusCode != 400)
+						return cb new Error(err ? response.statusCode)
+					
+					cb(null, body)
+			catch err
+				return cb(err)
 		catch err
 			return cb(err)
 
